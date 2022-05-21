@@ -1,0 +1,41 @@
+	|AnimationWitchoutShield
+Idle - 0-120
+Attack - 120-139
+walk - 140-180
+
+
+	|AnimationWitchShield
+Idle - 0-120
+Attack - 120-139
+walk - 140-180
+
+
+	|CharacterWitch cannon
+Idle - 0-120
+Attack - 120-140
+
+
+	|WizardIce
+Idle - 0-120
+Attack - 120-180
+
+
+	|WizardIFire
+Idle - 0-120
+Attack - 120-180
+
+	|Archer
+-
+-
+
+	|BOS
+Idle  0-120
+Attack1 120-150
+Attack2 150-185
+
+	|EnemyFin
+
+T-pose 0-2
+Run 2-27
+Death 27-119
+Attack 119-150
