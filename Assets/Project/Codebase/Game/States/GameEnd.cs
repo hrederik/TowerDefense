@@ -4,7 +4,6 @@ using UI.Ingame;
 using Game.Bots.Emit;
 using Game.Movement;
 using CustomUserInput;
-using Monetization.Metrica;
 
 namespace Game.States
 {
@@ -47,7 +46,6 @@ namespace Game.States
                 OnGameEnd();
 
                 _isGameEnded = true;
-                SendEvent("lose");
             }
         }
 
@@ -59,7 +57,6 @@ namespace Game.States
                 OnGameEnd();
 
                 _isGameEnded = true;
-                SendEvent("win");
             }
         }
 
@@ -75,23 +72,6 @@ namespace Game.States
         private void LoadNextScene()
         {
             SceneManager.LoadScene(_nextScene);
-        }
-
-        private void SendEvent(string result)
-        {
-            var levelCount = PlayerPrefs.GetInt("AmountGames");
-            var ingameMetrica = MetricaFacadesHub.Instance.Ingame;
-
-            var endGameStats = new EndGameStats();
-
-            endGameStats.LevelCount = ++levelCount;
-            endGameStats.LevelNumber = _levelNumber;
-            endGameStats.Result = result;
-
-            endGameStats.PassedTime = _stopwatch.PassedTime;
-            endGameStats.Progress = _progressCalculator.CalculateProgress();
-
-            ingameMetrica.SendLevelFinish(endGameStats, _levelName);
         }
     }
 }

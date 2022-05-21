@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using Game.Bots.Emit;
-using Monetization.Metrica;
 
 namespace Game.States
 {
@@ -21,16 +20,6 @@ namespace Game.States
             _started?.Invoke();
 
             _stopwatch.Launch();
-            SendEvent();
-        }
-
-        private void SendEvent()
-        {
-            var levelCount = PlayerPrefs.GetInt("AmountGames");
-            var ingameMetrica = MetricaFacadesHub.Instance.Ingame;
-
-            ingameMetrica.SendLevelStart(_levelNumber, _levelName, ++levelCount);
-            PlayerPrefs.SetInt("AmountGames", levelCount);
         }
     }
 }
