@@ -4,7 +4,7 @@ using Game.Damage;
 
 namespace Game.Towers
 {
-    public class Castle : MonoBehaviour, IDamageable
+    public class MainTower : MonoBehaviour, IDamageable
     {
         [SerializeField] private Health _health;
         [SerializeField] private Transform _attackPoint;

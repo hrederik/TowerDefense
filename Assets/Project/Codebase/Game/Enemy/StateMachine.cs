@@ -7,7 +7,7 @@ namespace Game.Bots.Behaviour
 {
     public class StateMachine : MonoBehaviour
     {
-        [SerializeField] private Castle _finalGoal;
+        [SerializeField] private MainTower _finalGoal;
         [SerializeField] private Vision _vision;
         [SerializeField] private EnemyAi _intelligence;
         [SerializeField] private StatesContainer _states;
